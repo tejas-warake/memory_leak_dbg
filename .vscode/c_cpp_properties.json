@@ -10,7 +10,7 @@
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE",
-                "MEM_DEBUG"
+                "MEM_DBG"
             ],
             "cStandard": "c11",
             "cppStandard": "c++17",
