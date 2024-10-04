@@ -1,0 +1,33 @@
+name: CI C++
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    branches:
+      - main 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Compiler
+      run: sudo apt-get install g++ make -y  
+
+    - name: Build Memory Tracker
+      run: |
+        make               
+
+    - name: Run Example 
+      run: |
+        cd build           
+        ./Test1            
+
+    - name: Clean Up
+      run: |
+        make clean         
