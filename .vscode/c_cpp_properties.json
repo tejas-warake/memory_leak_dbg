@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "linux",
+            "includePath": [
+                "${workspaceFolder}\\**",
+                "${workspaceFolder}\\include\\"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "MEM_DEBUG"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe"
+        }
+    ],
+    "version": 4
+}
