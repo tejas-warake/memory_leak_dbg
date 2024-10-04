@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -I./include -g -Wall -DMEM_DBG
+CFLAGS = -I./include -g -Wall -DMEM_DBG -w
 
 SRC_DIR = src
 BUILD_DIR = build
