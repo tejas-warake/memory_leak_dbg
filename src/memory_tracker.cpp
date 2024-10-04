@@ -67,7 +67,7 @@ void reportLeaks() {
     std::lock_guard<std::mutex> guard(memoryMutex);
 
     if (!memAllocMap.empty()) {
-        std::cout << "Memory leaks detected:\n";
+        std::cout << "\nMemory leaks detected:\n";
         for (const auto& alloc : memAllocMap) {
             std::cout << "Leaked " << alloc.second.size << " bytes at " << alloc.first 
                       << " (File: " << alloc.second.file << ", Line: " << alloc.second.line << ")\n";
