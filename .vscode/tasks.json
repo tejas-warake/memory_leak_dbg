@@ -42,7 +42,8 @@
                 "-L${workspaceFolder}\\build",
                 "-lMemoryTracker",
                 "-o",
-                "${workspaceFolder}\\build\\Test1"
+                "${workspaceFolder}\\build\\Test1",
+                "-DMEM_DBG" 
             ],
             "dependsOn": "Archive MemoryTracker Library",
             "group": "build",
