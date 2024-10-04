@@ -18,6 +18,48 @@
             },
             "problemMatcher": ["$gcc"],
             "detail": "Compiles memory_tracker.cpp to an object file"
+        },
+        {
+            "label": "Archive MemoryTracker Library",
+            "type": "shell",
+            "command": "ar",
+            "args": [
+                "rcs",
+                "${workspaceFolder}\\build\\libMemoryTracker.a",
+                "${workspaceFolder}\\build\\memory_tracker.o"
+            ],
+            "dependsOn": "Build MemoryTracker Library",
+            "problemMatcher": [],
+            "detail": "Archives object file into a static library"
+        },
+        {
+            "label": "Build Test Program",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${workspaceFolder}\\test\\Test1.cpp",
+                "-I${workspaceFolder}\\include",
+                "-L${workspaceFolder}\\build",
+                "-lMemoryTracker",
+                "-o",
+                "${workspaceFolder}\\build\\Test1"
+            ],
+            "dependsOn": "Archive MemoryTracker Library",
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "Builds the test program and links with the MemoryTracker library"
+        },
+        {
+            "label": "Run Test Program",
+            "type": "shell",
+            "command": "${workspaceFolder}\\build\\Test1",
+            "dependsOn": "Build Test Program",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs the test program"
         }
     ]
 }
